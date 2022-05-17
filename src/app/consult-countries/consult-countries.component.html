@@ -4,23 +4,20 @@
       <div class="col-2">
         <mat-form-field appearance="standard">
           <mat-label>Country</mat-label>
-          <input matInput type="text" id="name" formControlName="name" placeholder="Search coutry">
+          <input matInput type="text" id="name" formControlName="name" placeholder="Search coutry" (input)="search()">
         </mat-form-field>
       </div>
       <div class="col-2">
         <mat-form-field appearance="standard">
           <mat-label>Initial</mat-label>
-          <input matInput type="text" id="initial" formControlName="initial" placeholder="Search initial">
+          <input matInput type="text" id="initial" formControlName="initial" placeholder="Search initial" (input)="search()">
         </mat-form-field>
       </div>
       <div class="col-2">
         <mat-form-field appearance="standard">
           <mat-label>Currency</mat-label>
-          <input matInput type="text" id="currency" formControlName="currency" placeholder="Search currency">
+          <input matInput type="text" id="currency" formControlName="currency" placeholder="Search currency" (input)="search()">
         </mat-form-field>
-      </div>
-      <div class="col-1">
-        <button type="button" class="btn btn-primary" (click)="search()">Search</button>
       </div>
     </div>
     <div>
@@ -45,13 +42,13 @@
                 <td>
                   <h1>{{country.currencies | map}}</h1>
                 </td>
-                <td>
-                  <h1><img src="{{country.flags.svg}}" alt="imagem" width="40px" height="40px"></h1>
+                <td class="country-flag">
+                  <img src="{{country.flags.svg}}" alt="imagem" width="40px" height="40px">
                 </td>
               </tr>
               <div class="country-expanded hidden" id="expanded-{{i}}">
                 <div>
-                  <td><label>Population: <h1>{{country.population | mask: "separator"}}</h1></label></td>
+                  <td><label>Population: <h1>{{country.population }}</h1></label></td>
                 </div>
                 <div>
                   <td><label>Time Zone: <h1>{{country.timeZones}}</h1></label></td>

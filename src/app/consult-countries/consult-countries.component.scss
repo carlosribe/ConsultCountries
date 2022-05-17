@@ -1,8 +1,40 @@
+@keyframes slide {
+    0% { 
+        opacity: 0;
+        max-height: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+        max-height: 50%;
+    }
+
+    100% {
+        opacity: 1;
+        max-height: 100%;
+    }
+}
+
 .country:hover {
     cursor: pointer;
 }
 
 .hidden {
     display: none !important;
-    display: flex; width: 100%;
+}
+
+.country-expanded {
+    display: flex;
+    animation: 0.7s slide;
+}
+
+.country-flag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 65.5px;
+
+    img {
+        min-width: 100px;
+    }
 }

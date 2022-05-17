@@ -6,7 +6,7 @@ export class Country {
     borders!: Array<string>;
     flags!: Flags;
     cca2!: string;
-    currencies!: Map<string, string>;
+    currencies!: object;
     languages!: Map<string, string>;
 }
 

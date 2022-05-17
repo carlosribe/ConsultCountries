@@ -19,14 +19,17 @@ export class ConsultCountriesComponent{
     currency: new FormControl(),
   })
 
-  constructor( private service: CountryService) { }
+  constructor( private service: CountryService) {
+    this.search();
+  }
 
   search(){
     if(this.form.value.name || this.form.value.initial || this.form.value.currency) {
+      console.log('VALOR INSERIDO', this.form.value.currency.toUpperCase());
       this.viewCountries = this.countries
         .filter(country => !this.form.value.name || country.name.common.toLowerCase().includes(this.form.value.name.toLowerCase()))
         .filter(country => !this.form.value.initial || country.cca2.toLowerCase().includes(this.form.value.initial))
-        .filter(country => !this.form.value.currency || Array.from(country.currencies.keys()).includes(this.form.value.currency.toUpperCase()));
+        .filter(country => !this.form.value.currency || country.currencies && Object.keys(country.currencies).join('').trim().includes(this.form.value.currency.toUpperCase()));
     } 
     else {
       this.service.getCountries().subscribe(countries =>{
