@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CountryService {
 
-  url = 'https://localhost:7214/api/Countries';  
+  url = 'https://localhost:7092/api/Countries';  
 
   constructor(private http: HttpClient) { }
 
