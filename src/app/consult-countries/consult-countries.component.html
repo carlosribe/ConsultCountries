@@ -1,27 +1,27 @@
 <div>
   <div [formGroup]="form">
-    <div style="display: flex; column-gap: 0;" class="tableCenter">
-      <div class="col-2">
+    <div class="tableCenter fild">
+      <div class="col-4 tableRight">
         <mat-form-field appearance="standard">
           <mat-label>Country</mat-label>
-          <input matInput type="text" id="name" formControlName="name" placeholder="Search coutry" (input)="search()">
+          <input matInput type="text" id="name" formControlName="name" placeholder="Search" (input)="search()">
         </mat-form-field>
       </div>
-      <div class="col-2">
+      <div class="col-4">
         <mat-form-field appearance="standard">
           <mat-label>Initial</mat-label>
-          <input matInput type="text" id="initial" formControlName="initial" placeholder="Search initial" (input)="search()">
+          <input matInput type="text" id="initial" formControlName="initial" placeholder="Search" (input)="search()">
         </mat-form-field>
       </div>
-      <div class="col-2">
+      <div class="col-4 tableLeft">
         <mat-form-field appearance="standard">
           <mat-label>Currency</mat-label>
-          <input matInput type="text" id="currency" formControlName="currency" placeholder="Search currency" (input)="search()">
+          <input matInput type="text" id="currency" formControlName="currency" placeholder="Search" (input)="search()">
         </mat-form-field>
       </div>
     </div>
     <div>
-        <table class="table table-striped table-bordered table-hover" *ngIf="viewCountries != null">
+        <table class="table table-striped table-bordered table-hover table-responsive" *ngIf="viewCountries != null">
           <thead>
             <tr>
               <th scope="col">Country</th>
@@ -37,10 +37,10 @@
                   <h1>{{country.name.common}}</h1>
                 </td>
                 <td>
-                  <h1>{{country.cca2}}</h1>
+                  <h1>{{country.cca3}}</h1>
                 </td>
                 <td>
-                  <h1>{{country.currencies | map}}</h1>
+                  <h1>{{country.currencies | mapKey}}</h1>
                 </td>
                 <td class="country-flag">
                   <img src="{{country.flags.svg}}" alt="imagem" width="40px" height="40px">
@@ -54,7 +54,7 @@
                   <td><label>Time Zone: <h1>{{country.timeZones}}</h1></label></td>
                 </div>
                 <div>
-                  <td><label>Currencies: <h1>{{country.currencies | map}}</h1></label></td>
+                  <td><label>Currencies: <h1>{{country.currencies | mapKey}}</h1></label></td>
                 </div>
                 <div>
                   <td><label>Languages: <h1>{{country.languages | mapValue}}</h1></label></td>

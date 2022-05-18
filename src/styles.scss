@@ -8,10 +8,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .tableCenter{
     display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    justify-items: center;
     text-align: center;
-    justify-items: center;
+}
+
+.tableLeft{
+    display: flex; 
+    text-align: left;
+}
+
+.tableRight{
+    display: flex; 
+    justify-content: right;
+    justify-items: right;
+    
+}
+
+
+.fild{
+    font-size: large !important;
+    display: flex; 
+
 }
 

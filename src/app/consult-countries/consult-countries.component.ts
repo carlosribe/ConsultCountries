@@ -25,10 +25,9 @@ export class ConsultCountriesComponent{
 
   search(){
     if(this.form.value.name || this.form.value.initial || this.form.value.currency) {
-      console.log('VALOR INSERIDO', this.form.value.currency.toUpperCase());
       this.viewCountries = this.countries
         .filter(country => !this.form.value.name || country.name.common.toLowerCase().includes(this.form.value.name.toLowerCase()))
-        .filter(country => !this.form.value.initial || country.cca2.toLowerCase().includes(this.form.value.initial))
+        .filter(country => !this.form.value.initial || country.cca3.toLowerCase().includes(this.form.value.initial))
         .filter(country => !this.form.value.currency || country.currencies && Object.keys(country.currencies).join('').trim().includes(this.form.value.currency.toUpperCase()));
     } 
     else {

@@ -14,17 +14,17 @@ import { MatTableModule } from '@angular/material/table';
 import { ConsultCountriesComponent } from './consult-countries/consult-countries.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MapPipe } from './pipe/map.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CountryService } from './service/country.service';
 import { MapValuePipe } from './pipe/object-map-value.pipe';
 import { NgxMaskModule } from 'ngx-mask';
+import { MapKeyPipe } from './pipe/object-map-key.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConsultCountriesComponent,
-    MapPipe,
+    MapKeyPipe,
     MapValuePipe,
   ],
   imports: [

@@ -1,26 +1,28 @@
-export class Country { 
-    name!: Name;
-    capital!: Array<string>;
-    population!: number;
-    timeZones!: Array<string>;
-    borders!: Array<string>;
-    flags!: Flags;
-    cca2!: string;
-    currencies!: object;
-    languages!: Map<string, string>;
+export interface Country { 
+    name: Name;
+    capital: Array<string>;
+    population: number;
+    timeZones: Array<string>;
+    borders: Array<string>;
+    flags: Flags;
+    cca3: string;
+    currencies: object;
+    languages: Map<string, string>;
+    latlng: Array<number>;
+    region: string;
 }
 
-export class Currencies { 
-   name!: string;
-   symbol!: string;
+export interface Currencies { 
+   name: string;
+   symbol: string;
 }
 
-export class Name { 
-    common!: string;
+export interface Name { 
+    common: string;
 }
 
-export class Flags { 
-    png!: string;
-    svg!: string;
+export interface Flags { 
+    png: string;
+    svg: string;
 }
 
